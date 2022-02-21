@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="2022.02.21_1220_create_users_sequence" author="aliaksandr anashkevich">
+        <createSequence sequenceName="user_id_seq" startValue="1" incrementBy="1"/>
+    </changeSet>
+
+    <changeSet id="2022.02.21_1222_create_users_table" author="aliaksandr anashkevich">
+        <createTable tableName="users">
+            <column name="id" type="numeric" defaultValueComputed="nextval('user_id_seq')">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="email" type="varchar(200)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
