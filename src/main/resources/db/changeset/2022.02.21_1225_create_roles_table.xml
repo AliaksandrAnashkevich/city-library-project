@@ -10,7 +10,7 @@
 
     <changeSet id="2022.02.21_1226_create_roles_table" author="aliaksandr anashkevich">
         <createTable tableName="roles">
-            <column name="id" type="numeric" defaultValueComputed="nextval('role_id_seq')">
+            <column name="id" type="bigint" defaultValueComputed="nextval('role_id_seq')">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(50)">
@@ -25,13 +25,13 @@
 
     <changeSet id="2022.02.21_1228_create_user_roles_table" author="aliaksandr anashkevich">
         <createTable tableName="user_roles">
-            <column name="id" type="numeric" defaultValueComputed="nextval('user_role_id_seq')">
+            <column name="id" type="bigint" defaultValueComputed="nextval('user_role_id_seq')">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="user_id" type="numeric">
+            <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="role_id" type="numeric">
+            <column name="role_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>

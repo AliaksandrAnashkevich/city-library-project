@@ -10,7 +10,7 @@
 
     <changeSet id="2022.02.21_1222_create_users_table" author="aliaksandr anashkevich">
         <createTable tableName="users">
-            <column name="id" type="numeric" defaultValueComputed="nextval('user_id_seq')">
+            <column name="id" type="bigint" defaultValueComputed="nextval('user_id_seq')">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="email" type="varchar(200)">
