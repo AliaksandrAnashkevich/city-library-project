@@ -10,7 +10,7 @@
 
     <changeSet id="2022.02.21_1232_create_cities_table" author="aliaksandr anashkevich">
         <createTable tableName="cities">
-            <column name="id" type="numeric" defaultValueComputed="nextval('city_id_seq')">
+            <column name="id" type="bigint" defaultValueComputed="nextval('city_id_seq')">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(100)">

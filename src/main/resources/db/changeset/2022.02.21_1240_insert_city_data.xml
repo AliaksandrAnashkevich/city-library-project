@@ -7,12 +7,6 @@
     <changeSet id="2022.02.21_1240" author="aliaksandr anashkevich">
         <loadData tableName="cities"
                   file="/db/cities.csv">
-            <column header="id"
-                    name="id"
-                    type="NUMERIC"/>
-            <column header="name"
-                    name="name"
-                    type="string"/>
             <column header="photo"
                     name="photo"
                     type="string"/>
