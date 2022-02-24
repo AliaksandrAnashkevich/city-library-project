@@ -5,8 +5,8 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class AuthRequest {
+public class CityRequest {
 
-    private final String email;
-    private final String password;
+    public final String name;
+    public final String photo;
 }

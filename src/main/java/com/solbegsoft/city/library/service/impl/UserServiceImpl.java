@@ -1,7 +1,7 @@
 package com.solbegsoft.city.library.service.impl;
 
 import com.solbegsoft.city.library.dto.request.AuthRequest;
-import com.solbegsoft.city.library.dto.responce.AuthResponse;
+import com.solbegsoft.city.library.dto.response.AuthResponse;
 import com.solbegsoft.city.library.exception.InvalidAuthRequestDataException;
 import com.solbegsoft.city.library.security.JwtTokenProvider;
 import com.solbegsoft.city.library.security.JwtUser;
