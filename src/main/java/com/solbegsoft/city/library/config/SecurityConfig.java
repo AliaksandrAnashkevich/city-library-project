@@ -22,8 +22,10 @@ import com.solbegsoft.city.library.security.JwtUserDetailsService;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private static final String CITY_ENDPOINT = "/city/**";
     private static final String SWAGGER_ENDPOINT = "/swagger-ui/**";
     private static final String LOGIN_ENDPOINT = "/auth/login";
+
 
     private final JwtTokenFilter jwtTokenFilter;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -44,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(SWAGGER_ENDPOINT).permitAll()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
+                .antMatchers(CITY_ENDPOINT).permitAll()
                 .anyRequest().authenticated();
         http.exceptionHandling().accessDeniedPage(LOGIN_ENDPOINT);
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);

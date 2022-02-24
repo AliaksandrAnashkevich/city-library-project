@@ -7,8 +7,8 @@
     <changeSet id="2022.02.21_1255_insert_roles_data" author="aliaksandr anashkevich">
         <sql>
             INSERT INTO roles(name) VALUES
-            ('ROLE_ADMIN'),
-            ('ROLE_USER');
+            ('ROLE_ALLOW_EDIT'),
+            ('ROLE_ALLOW_SEE');
         </sql>
     </changeSet>
 
@@ -24,8 +24,9 @@
     <changeSet id="2022.02.21_1310_insert_user_roles_data" author="aliaksandr anashkevich">
         <sql>
             INSERT INTO user_roles(user_id, role_id) VALUES
-            ((SELECT id FROM users WHERE email = 'admin@gmail.com'), (SELECT id FROM roles WHERE name = 'ROLE_ADMIN')),
-            ((SELECT id FROM users WHERE email = 'user@gmail.com'), (SELECT id FROM roles WHERE name = 'ROLE_USER'));
+            ((SELECT id FROM users WHERE email = 'admin@gmail.com'), (SELECT id FROM roles WHERE name = 'ROLE_ALLOW_EDIT')),
+            ((SELECT id FROM users WHERE email = 'admin@gmail.com'), (SELECT id FROM roles WHERE name = 'ROLE_ALLOW_SEE')),
+            ((SELECT id FROM users WHERE email = 'user@gmail.com'), (SELECT id FROM roles WHERE name = 'ROLE_ALLOW_SEE'));
         </sql>
     </changeSet>
 </databaseChangeLog>
