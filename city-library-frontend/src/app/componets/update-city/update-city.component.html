@@ -1,0 +1,54 @@
+<p>update-city works!</p>
+<div class="container" *ngIf="showEditBoard; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      Update city
+    </h3>
+  </header>
+  <form name="form"
+        (ngSubmit)="onSubmit()"
+        #f="ngForm"
+        novalidate>
+    <div class="form-group">
+      <label for="id">Id </label>
+      <label>{{form.id}}</label>
+      <input
+        type="text"
+        class="form-control"
+        name="id"
+        [(ngModel)]="form.id"
+        hidden
+        #id="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        [(ngModel)]="form.name"
+        #name="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input
+        type="text"
+        class="form-control"
+        name="photo"
+        [(ngModel)]="form.photo"
+        #photo="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

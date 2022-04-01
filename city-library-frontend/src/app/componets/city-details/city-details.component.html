@@ -1,0 +1,21 @@
+<p>city-details works!</p>
+<h3> View City Details</h3>
+<div>
+  <div>
+    <label> <b> Id: </b></label> {{city.id}}
+  </div>
+  <div>
+    <label> <b> Name: </b></label> {{city.name}}
+  </div>
+  <div>
+    <label> <b> Photo: </b></label>
+    <div><img src="{{ city?.photo }}"></div>
+  </div>
+  <div>
+    <ul class="navbar-nav ml-auto" *ngIf="showEditBoard">
+      <li class="nav-item">
+        <a href="#" [routerLink]="['/update/', city.id]" class="btn btn-info m-1">Update</a>
+      </li>
+    </ul>
+  </div>
+</div>
